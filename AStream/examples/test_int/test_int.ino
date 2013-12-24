@@ -1,7 +1,6 @@
 #include <AStream.h>
 
 int array[32]; // The maximum length of an int AStream is 64 : 128 bytes max length / 2 bytes per int
-byte* barray;
 
 // In Arduino or Wiring, an int is stored as a pair of bytes
 // with the LSB first then MSB. Your software must therefore send the
@@ -32,7 +31,7 @@ void loop() {
     }
     Serial.println("]");
     // Print out the array as bytes
-    barray = (byte*) array;
+    byte* barray = (byte*) array;
     Serial.print("byte [");
     for ( byte b = 0; b < intStream.length()*2; b++ ) {
       Serial.print(barray[b]);
