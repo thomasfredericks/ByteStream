@@ -23,25 +23,26 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
-#ifndef AStream_h
-#define AStream_h
+#ifndef ByteStream_h
+#define ByteStream_h
 
 #include <inttypes.h>
 
-class AStream
+class ByteStream
 {
 
 public:
   
-  AStream(void* array ,  uint8_t arrayLength, uint8_t sizeofvalue ); 
+  ByteStream(); 
   
   uint8_t available();
   uint8_t length();
+  uint8_t in[128] ;
   
 protected:
-  uint8_t* in;
+  
   int in_int;
-  uint8_t in_bits, in_index, expected_bytes, in_length, maxLength,sizeofvalue;
+  uint8_t in_bits, in_index, expected_bytes, in_length, read_index;
  
 };
 
