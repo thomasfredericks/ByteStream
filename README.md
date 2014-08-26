@@ -5,7 +5,7 @@ A library for Arduino and Wiring that allows the transfer an array of up to 128 
 
 PROTOCOL
 =======================
-The array is sent out as a series of serial bytes. 
+The array is sent out as a series of serial bytes. The total length is the number of bytes of the array + 2.
 
 The first byte is the only byte with the MSB set to 1. The other seven bits indicate the number of following bytes (with the exception that B10000000 indicates 128 bytes). For example : B10000010 indicates that the array will contain 2 bytes.
 
